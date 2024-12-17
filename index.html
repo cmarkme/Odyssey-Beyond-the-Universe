@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Book Reader</title>
+  
+  <!-- PDF.js for rendering PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- BooksJS library -->
+  <script src="https://booksjs.github.io/books/js/books.min.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #333;
+    }
+
+    #book-container {
+      width: 90%;
+      max-width: 800px;
+      height: 600px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Read: Odyssey Beyond the Known Universe</h1>
+  <!-- Book Container -->
+  <div id="book-container"></div>
+
+  <script>
+    // Initialize the BooksJS library
+    const book = new BooksJS({
+      container: 'book-container', // The ID of the container element
+      pdf: 'https://yourusername.github.io/your-repository/Odyssey_Full_Book.pdf', // Replace with your PDF link
+      width: '100%',
+      height: '100%',
+    });
+  </script>
+</body>
+</html>
