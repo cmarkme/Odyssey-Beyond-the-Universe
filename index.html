@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Book Reader</title>
-  
-  <!-- PDF.js for rendering PDFs -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <title>Odyssey Beyond the Known Universe</title>
 
-  <!-- BooksJS library -->
-  <script src="https://booksjs.github.io/books/js/books.min.js"></script>
-
-  <!-- Custom CSS -->
+  <!-- Turn.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,29 +20,55 @@
       color: #333;
     }
 
-    #book-container {
-      width: 90%;
-      max-width: 800px;
+    #book {
+      width: 800px;
       height: 600px;
       margin: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    #book img {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <h1>Read: Odyssey Beyond the Known Universe</h1>
+  <h1>Odyssey Beyond the Known Universe</h1>
   <!-- Book Container -->
-  <div id="book-container"></div>
+  <div id="book">
+    <div><img src="images/page1.jpg" alt="Page 1"></div>
+    <div><img src="images/page2.jpg" alt="Page 2"></div>
+    <div><img src="images/page3.jpg" alt="Page 3"></div>
+    <div><img src="images/page4.jpg" alt="Page 4"></div>
+    <div><img src="images/page5.jpg" alt="Page 5"></div>
+    <div><img src="images/page6.jpg" alt="Page 6"></div>
+    <div><img src="images/page7.jpg" alt="Page 7"></div>
+    <div><img src="images/page8.jpg" alt="Page 8"></div>
+    <div><img src="images/page9.jpg" alt="Page 9"></div>
+    <div><img src="images/page10.jpg" alt="Page 10"></div>
+    <div><img src="images/page11.jpg" alt="Page 11"></div>
+    <div><img src="images/page12.jpg" alt="Page 12"></div>
+    <div><img src="images/page13.jpg" alt="Page 13"></div>
+    <div><img src="images/page14.jpg" alt="Page 14"></div>
+    <div><img src="images/page15.jpg" alt="Page 15"></div>
+  </div>
 
+  <!-- Initialize Turn.js -->
   <script>
-    // Initialize the BooksJS library
-    const book = new BooksJS({
-      container: 'book-container', // The ID of the container element
-      pdf: 'https://raw.githubusercontent.com/cmarkme/Odyssey-Beyond-the-Universe/main/Odyssey_Full_Book.pdf', // Replace with your PDF link
-      width: '100%',
-      height: '100%',
+    document.addEventListener("DOMContentLoaded", function() {
+      const book = document.getElementById("book");
+      if (book) {
+        $('#book').turn({
+          width: 800,
+          height: 600,
+          autoCenter: true,
+        });
+      }
     });
   </script>
+
+  <!-- Include jQuery (required for Turn.js) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
